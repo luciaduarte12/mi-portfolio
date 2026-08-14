@@ -29,7 +29,7 @@ function App() {
       carrera: "Certificación en Primeros auxilios con RCP y DEA",
       institucion: "Institución BADRA",
       periodo: "septiembre 2025",
-      certificado: "/certificado-rcp-dea.jpeg",
+      certificado: "certificado-rcp-dea.jpeg",
     },
   ];
 
