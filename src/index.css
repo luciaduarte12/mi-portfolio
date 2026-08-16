@@ -270,6 +270,7 @@ header p {
   transform: translateX(0);
 }
 
+/* Menu lateral */
 .menu-lateral {
   position: fixed;
   left: 0;
@@ -277,32 +278,55 @@ header p {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
   z-index: 100;
 }
 
 .solapa-menu {
+  display: flex;
+  align-items: center;
+  gap: 0;
   background-color: white;
   color: #6b1e2e;
   border: 2px solid #c9973e;
   border-left: none;
   border-radius: 0 50px 50px 0;
-  padding: 10px 20px 10px 16px;
+  padding: 10px 14px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
-  transform: translateX(-30px);
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.icono-menu {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.texto-menu {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.3s ease, opacity 0.2s ease, margin-left 0.3s ease;
+}
+
+.solapa-menu:hover .texto-menu,
+.solapa-menu.activa .texto-menu {
+  max-width: 160px;
+  opacity: 1;
+  margin-left: 10px;
 }
 
 .solapa-menu:hover {
-  transform: translateX(0);
   border-color: #dbb15a;
 }
 
 .solapa-menu.activa {
-  transform: translateX(0);
   background-color: #c9973e;
   color: #3a1f26;
   border-color: #c9973e;
@@ -359,7 +383,6 @@ html {
 }
 
 /* Responsive - Mobile */
-/* Responsive - Mobile */
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.8rem;
@@ -394,18 +417,33 @@ html {
   }
 
   .solapa-menu {
-    transform: none;
     border: 2px solid #c9973e;
-    border-radius: 20px;
-    padding: 6px 10px;
-    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 10px;
     flex-shrink: 0;
     scroll-snap-align: center;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
   }
 
-  .solapa-menu:hover,
+  .solapa-menu .texto-menu {
+    display: none;
+  }
+
   .solapa-menu.activa {
-    transform: none;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 8px 14px;
+  }
+
+  .solapa-menu.activa .texto-menu {
+    display: inline;
+    max-width: 100px;
+    opacity: 1;
+    margin-left: 8px;
+    font-size: 0.7rem;
   }
 
   .boton-arriba {
@@ -480,4 +518,11 @@ html {
   border: none;
   display: block;
   transition: height 0.3s ease;
+}
+
+.categoria-descripcion {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }

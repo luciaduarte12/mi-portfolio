@@ -1,50 +1,83 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { FaUser, FaGraduationCap, FaTools, FaGlobe, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 
 function MenuLateral() {
   const secciones = [
-    { id: "sobre-mi", nombre: "Sobre mí" },
-    { id: "formacion", nombre: "Formación" },
-    { id: "habilidades", nombre: "Habilidades" },
-    { id: "idiomas", nombre: "Idiomas" },
-    { id: "proyectos", nombre: "Proyectos" },
-    { id: "contacto", nombre: "Contacto" },
+    { id: "sobre-mi", nombre: "Sobre mí", icono: <FaUser /> },
+    { id: "formacion", nombre: "Formación", icono: <FaGraduationCap /> },
+    { id: "habilidades", nombre: "Habilidades", icono: <FaTools /> },
+    { id: "idiomas", nombre: "Idiomas", icono: <FaGlobe /> },
+    { id: "proyectos", nombre: "Proyectos", icono: <FaFolderOpen /> },
+    { id: "contacto", nombre: "Contacto", icono: <FaEnvelope /> },
   ];
 
   const [seccionActiva, setSeccionActiva] = useState("sobre-mi");
+  const ignorarScroll = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entradas) => {
-        let maxRatio = 0;
-        let idGanador = null;
+    function calcularSeccionActiva() {
+      if (ignorarScroll.current) return;
 
-        entradas.forEach((entrada) => {
-          if (entrada.intersectionRatio > maxRatio) {
-            maxRatio = entrada.intersectionRatio;
-            idGanador = entrada.target.id;
-          }
-        });
+      const distanciaAlFinal =
+        document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
 
-        if (idGanador) {
-          setSeccionActiva(idGanador);
+      if (distanciaAlFinal < 100) {
+        setSeccionActiva(secciones[secciones.length - 1].id);
+        return;
+      }
+
+      const lineaReferencia = window.innerHeight * 0.25;
+      let idActivo = secciones[0].id;
+
+      for (const seccion of secciones) {
+        const elemento = document.getElementById(seccion.id);
+        if (!elemento) continue;
+
+        const rect = elemento.getBoundingClientRect();
+        if (rect.top <= lineaReferencia) {
+          idActivo = seccion.id;
         }
-      },
-      { threshold: [0.1, 0.25, 0.5, 0.75, 1] }
-    );
+      }
 
-    secciones.forEach((seccion) => {
-      const elemento = document.getElementById(seccion.id);
-      if (elemento) observer.observe(elemento);
-    });
+      setSeccionActiva(idActivo);
+    }
 
-    return () => observer.disconnect();
+    calcularSeccionActiva();
+
+    let ticking = false;
+    function alScrollear() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          calcularSeccionActiva();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", alScrollear);
+    window.addEventListener("resize", alScrollear);
+
+    return () => {
+      window.removeEventListener("scroll", alScrollear);
+      window.removeEventListener("resize", alScrollear);
+    };
   }, []);
 
   const irASeccion = (id) => {
     const elemento = document.getElementById(id);
-    if (elemento) {
-      elemento.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (!elemento) return;
+
+    // Fijamos la seccion activa manualmente e ignoramos el calculo automatico
+    // hasta que termine la animacion del scroll
+    ignorarScroll.current = true;
+    setSeccionActiva(id);
+
+    elemento.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    setTimeout(() => {
+      ignorarScroll.current = false;
+    }, 1000);
   };
 
   return (
@@ -54,8 +87,11 @@ function MenuLateral() {
           key={seccion.id}
           className={`solapa-menu ${seccionActiva === seccion.id ? 'activa' : ''}`}
           onClick={() => irASeccion(seccion.id)}
+          aria-label={seccion.nombre}
+          title={seccion.nombre}
         >
-          {seccion.nombre}
+          <span className="icono-menu">{seccion.icono}</span>
+          <span className="texto-menu">{seccion.nombre}</span>
         </button>
       ))}
     </nav>

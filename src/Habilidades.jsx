@@ -5,6 +5,9 @@ function Habilidades({ categorias }) {
       {categorias.map((categoria) => (
         <div className="categoria" key={categoria.titulo}>
           <h3>{categoria.titulo}</h3>
+          {categoria.descripcion && (
+            <p className="categoria-descripcion">{categoria.descripcion}</p>
+          )}
           <div className="chips">
             {categoria.items.map((skill) => (
               <span className="chip" key={skill}>

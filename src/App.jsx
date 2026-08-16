@@ -12,7 +12,7 @@ import Proyectos from './Proyectos';
 import { useEffect } from 'react';
 
 function App() {
-  const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una pasantía donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
+  const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una oportunidad laboral donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
 
   const miFormacion = [
     {
@@ -36,22 +36,27 @@ function App() {
   const misHabilidades = [
     {
       titulo: "Bases de datos",
+      descripcion: "Diseño modelos relacionales y escribo consultas complejas. Por ejemplo, armé el backend del memotest de este portfolio con dos tablas en SQL Server (Azure), con inserts parametrizados para evitar SQL injection y consultas de ranking con ORDER BY y TOP.",
       items: ["SQL Server", "Modelado de datos", "Consultas avanzadas (JOINs, subconsultas)"],
     },
     {
       titulo: "Análisis de datos",
+      descripcion: "Trabajo con Power BI y Excel para armar reportes y seguimiento de datos, aplicado por ejemplo a un tracker de mi propio avance académico con lógica de correlatividades y progreso visual.",
       items: ["Power BI", "Excel (nivel intermedio)"],
     },
     {
       titulo: "Desarrollo web",
+      descripcion: "Construyo interfaces con React desde cero, incluyendo lógica de estado, componentes reutilizables y consumo de APIs propias. Este portfolio y el memotest embebido en él están hechos íntegramente con este stack.",
       items: ["HTML", "CSS", "JavaScript", "React"],
     },
     {
       titulo: "Soporte técnico",
+      descripcion: "Armo, reparo y diagnóstico problemas de hardware en PC, con base en la certificación de Soporte Técnico Nivel 1 de la UTN.",
       items: ["Armado de PC", "Reparación de PC", "Mantenimiento de PC", "Componentes de Hardware", "Diagnóstico de Hardware"],
     },
     {
       titulo: "Sistemas operativos",
+      descripcion: "Uso Windows y Linux en entornos de desarrollo y para tareas de soporte, incluyendo configuración básica de red y solución de problemas.",
       items: ["Windows", "Linux"],
     },
   ];
