@@ -79,8 +79,8 @@ function App() {
     },
     {
       nombre: "Memotest",
-      descripcion: "Juego de memoria con el stack tecnológico usado en este portfolio. Conectado a una base de datos real (SQL Server) con leaderboard de mejores tiempos. Sin login, se juega directo desde acá.",
-      tecnologias: ["React", "Express", "SQL Server", "Vite"],
+      descripcion: "Juego de memoria con el stack tecnológico usado en este portfolio. Conectado a una base de datos real (PostgreSQL) con leaderboard de mejores tiempos. Sin login, se juega directo desde acá.",
+      tecnologias: ["React", "Express", "PostgreSQL", "Vite"],
       enlace: "https://luciaduarte12.github.io/memotest-db/",
       textoBoton: "Jugar",
       embebido: true,
