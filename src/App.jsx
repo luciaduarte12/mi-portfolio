@@ -12,7 +12,7 @@ import Proyectos from './Proyectos';
 import { useEffect } from 'react';
 
 function App() {
-  const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una oportunidad laboral donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
+  const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, PostgreSQL, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una oportunidad laboral donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
 
   const miFormacion = [
     {
@@ -36,8 +36,8 @@ function App() {
   const misHabilidades = [
     {
       titulo: "Bases de datos",
-      descripcion: "Diseño modelos relacionales y escribo consultas complejas. Por ejemplo, armé el backend del memotest de este portfolio con dos tablas en SQL Server (Azure), con inserts parametrizados para evitar SQL injection y consultas de ranking con ORDER BY y TOP.",
-      items: ["SQL Server", "Modelado de datos", "Consultas avanzadas (JOINs, subconsultas)"],
+      descripcion: "Diseño modelos relacionales y escribo consultas complejas. Por ejemplo, armé el backend del memotest de este portfolio con dos tablas en PostgreSQL (Supabase), con inserts parametrizados para evitar SQL injection y consultas de ranking con ORDER BY y LIMIT.",
+      items: ["SQL Server", "PostgreSQL", "Modelado de datos", "Consultas avanzadas (JOINs, subconsultas)"],
     },
     {
       titulo: "Análisis de datos",
