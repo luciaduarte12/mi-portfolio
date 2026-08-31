@@ -41,8 +41,8 @@ function App() {
     },
     {
       titulo: "Análisis de datos",
-      descripcion: "Trabajo con Power BI y Excel para armar reportes y seguimiento de datos, aplicado por ejemplo a un tracker de mi propio avance académico con lógica de correlatividades y progreso visual.",
-      items: ["Power BI", "Excel (nivel intermedio)"],
+      descripcion: "Proceso y transformo datos para convertirlos en información clave de negocio, incluyendo generación y limpieza de datos con Python. Diseño dashboards interactivos centrados en el seguimiento de KPIs, aplicando herramientas como Tableau Public, Power BI y Excel, e integro modelos de IA para automatizar tareas de clasificación.",
+      items: ["Python", "Tableau Public", "Power BI", "Excel (nivel intermedio)", "Indicadores Clave (KPIs)", "Modelado y ETL básico", "Integración de IA (APIs)"],
     },
     {
       titulo: "Desarrollo web",
@@ -71,6 +71,38 @@ function App() {
   ];
 
   const misProyectos = [
+    {
+      nombre: "Soporte de Tickets",
+      descripcion: "Proyecto end-to-end de análisis de datos: generación de 300 tickets sintéticos con Python, clasificación automática mediante IA (83% de acierto en categorización) y dashboard interactivo en Tableau Public con KPIs de SLA, backlog y rendimiento por técnico.",
+      tecnologias: ["Python", "Gemini API", "Power BI", "Tableau Public"],
+      enlace: "https://public.tableau.com/views/AnalisisTicketsSoporteIA/Dashboard1",
+      textoBoton: "Ver Dashboard",
+      componenteTableau: (
+        <div className="tableauPlaceholder" id="viz1787929571802" style={{ position: 'relative' }}>
+          <noscript>
+            <a href="#">
+              <img alt="Dashboard 1 " src="https://public.tableau.com/static/images/An/AnalisisTicketsSoporteIA/Dashboard1/1_rss.png" style={{ border: 'none' }} />
+            </a>
+          </noscript>
+          <object className="tableauViz" style={{ display: 'none' }}>
+            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+            <param name="embed_code_version" value="3" />
+            <param name="site_root" value="" />
+            <param name="name" value="AnalisisTicketsSoporteIA/Dashboard1" />
+            <param name="tabs" value="no" />
+            <param name="toolbar" value="yes" />
+            <param name="static_image" value="https://public.tableau.com/static/images/An/AnalisisTicketsSoporteIA/Dashboard1/1.png" />
+            <param name="animate_transition" value="yes" />
+            <param name="display_static_image" value="yes" />
+            <param name="display_spinner" value="yes" />
+            <param name="display_overlay" value="yes" />
+            <param name="display_count" value="yes" />
+            <param name="language" value="es-ES" />
+            <param name="filter" value="publish=yes" />
+          </object>
+        </div>
+      )
+    },
     {
       nombre: "Portafolio personal",
       descripcion: "Sitio web desarrollado con React y Vite, con diseño propio, animaciones al hacer scroll, navegación interactiva y diseño responsive.",
@@ -117,7 +149,6 @@ function App() {
         <Proyectos items={misProyectos} />
       </AlAparecer>
       <Contacto />
-      
     </div>
   );
 }
