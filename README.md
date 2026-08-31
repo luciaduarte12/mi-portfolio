@@ -13,6 +13,7 @@ Portafolio web personal desarrollado con React y Vite, con diseño propio, anima
 - Diseño responsive (adaptado a mobile)
 - Componentes reutilizables y datos separados de la presentación
 - Proyecto destacado: un memotest full-stack (React + Express + SQL Server) embebido directamente en la sección de Proyectos, jugable sin salir del portfolio — [repo acá](https://github.com/luciaduarte12/memotest-db)
+- Proyecto destacado: análisis de tickets de soporte técnico con generación de datos en Python, clasificación automática por IA (83% de acierto) y dashboard interactivo en Tableau Public embebido en la sección de Proyectos — [repo acá](https://github.com/luciaduarte12/analisis-tickets-soporte-ia)
 
 ## Tecnologías
 
