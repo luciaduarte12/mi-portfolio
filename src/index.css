@@ -1115,3 +1115,192 @@ html {
     font-size: 0.7rem;
   }
 }
+
+/* ===== Botón de descargar CV ===== */
+.boton-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 11px 22px;
+  background-color: var(--dorado);
+  color: var(--fondo);
+  border: 1px solid var(--dorado);
+  border-radius: 8px;
+  font-family: var(--fuente-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.boton-cv:hover {
+  background-color: transparent;
+  color: var(--dorado);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(201, 151, 62, 0.25);
+}
+
+.boton-cv:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+/* ===== Email: botón de copiar ===== */
+.boton-copiar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--dorado);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.boton-copiar:hover {
+  border-color: var(--dorado);
+  background-color: rgba(201, 151, 62, 0.12);
+}
+
+.aviso-copiado {
+  min-width: 4.5em;
+  font-family: var(--fuente-mono);
+  font-size: 0.72rem;
+  color: var(--dorado);
+}
+
+/* ===== Barra de progreso del scroll ===== */
+.progreso-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 300;
+  background-color: transparent;
+}
+
+.progreso-barra {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bordo-claro), var(--dorado), var(--champagne));
+  box-shadow: 0 0 10px rgba(201, 151, 62, 0.5);
+}
+
+/* ===== Proyectos: "qué aprendí" y botones ===== */
+.proyecto-aprendizaje {
+  margin: 14px 0;
+  padding: 12px 16px;
+  background-color: rgba(232, 180, 191, 0.06);
+  border-left: 2px solid var(--rosa);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.proyecto-aprendizaje strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--rosa);
+}
+
+.proyecto-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.proyecto-acciones .boton-certificado {
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.boton-certificado.boton-codigo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.boton-certificado.boton-codigo:hover {
+  background-color: var(--rosa);
+  color: var(--fondo);
+}
+
+/* ===== Proyectos: hover más cuidado ===== */
+.proyecto-item {
+  position: relative;
+}
+
+/* Línea dorada que se dibuja arriba de la tarjeta al pasar el cursor */
+.proyecto-item::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--dorado), var(--champagne));
+  border-radius: 8px 8px 0 0;
+  transition: width 0.45s ease;
+}
+
+.proyecto-item:hover::before {
+  width: 100%;
+}
+
+.proyecto-item h3 {
+  transition: color 0.25s ease;
+}
+
+.proyecto-item:hover h3 {
+  color: var(--dorado-claro);
+}
+
+/* ===== Habilidades: los chips aparecen de a uno ===== */
+.habilidades .chip {
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+
+.al-aparecer.visible .habilidades .chip {
+  opacity: 1;
+  transform: none;
+}
+
+.al-aparecer.visible .habilidades .chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--rosa);
+  background-color: rgba(232, 180, 191, 0.16);
+  transition-delay: 0s;
+}
+
+/* Si la persona tiene las animaciones desactivadas, todo se ve de entrada */
+@media (prefers-reduced-motion: reduce) {
+  .habilidades .chip {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .proyecto-item::before,
+  .proyecto-item h3 {
+    transition: none;
+  }
+}

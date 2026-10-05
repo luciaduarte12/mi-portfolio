@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { FaGithub } from "react-icons/fa";
 
 function Proyectos({ items }) {
   const [proyectoAbierto, setProyectoAbierto] = useState(null);
@@ -58,22 +59,44 @@ function Proyectos({ items }) {
               </span>
             ))}
           </div>
-          {proyecto.enlace && (
-            proyecto.embebido || proyecto.componenteTableau ? (
-              <button
-                className="boton-certificado"
-                onClick={() =>
-                  setProyectoAbierto(proyectoAbierto === proyecto.nombre ? null : proyecto.nombre)
-                }
-              >
-                {proyectoAbierto === proyecto.nombre ? "Cerrar" : (proyecto.textoBoton || "Ver proyecto")}
-              </button>
-            ) : (
-              <a href={proyecto.enlace} target="_blank" rel="noopener noreferrer" className="boton-certificado">
-                {proyecto.textoBoton || "Ver proyecto"}
-              </a>
-            )
+
+          {proyecto.aprendizaje && (
+            <p className="proyecto-aprendizaje">
+              <strong>// qué aprendí</strong>
+              {proyecto.aprendizaje}
+            </p>
           )}
+
+          <div className="proyecto-acciones">
+            {proyecto.enlace && (
+              proyecto.embebido || proyecto.componenteTableau ? (
+                <button
+                  className="boton-certificado"
+                  onClick={() =>
+                    setProyectoAbierto(proyectoAbierto === proyecto.nombre ? null : proyecto.nombre)
+                  }
+                >
+                  {proyectoAbierto === proyecto.nombre ? "Cerrar" : (proyecto.textoBoton || "Ver proyecto")}
+                </button>
+              ) : (
+                <a href={proyecto.enlace} target="_blank" rel="noopener noreferrer" className="boton-certificado">
+                  {proyecto.textoBoton || "Ver proyecto"}
+                </a>
+              )
+            )}
+
+            {proyecto.repositorio && (
+              <a
+                href={proyecto.repositorio}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="boton-certificado boton-codigo"
+              >
+                <FaGithub />
+                Ver código
+              </a>
+            )}
+          </div>
 
           {proyecto.embebido && proyectoAbierto === proyecto.nombre && (
             <div className="juego-embebido">

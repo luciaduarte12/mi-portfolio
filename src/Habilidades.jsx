@@ -9,8 +9,8 @@ function Habilidades({ categorias }) {
             <p className="categoria-descripcion">{categoria.descripcion}</p>
           )}
           <div className="chips">
-            {categoria.items.map((skill) => (
-              <span className="chip" key={skill}>
+            {categoria.items.map((skill, indice) => (
+              <span className="chip" key={skill} style={{ '--i': indice }}>
                 {skill}
               </span>
             ))}

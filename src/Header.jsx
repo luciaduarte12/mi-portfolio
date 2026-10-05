@@ -1,3 +1,4 @@
+import { FaDownload } from 'react-icons/fa';
 import TarjetaCodigo from './TarjetaCodigo';
 
 function Header() {
@@ -9,6 +10,14 @@ function Header() {
           <span className="hero-saludo">// hola, soy</span>
           <h1>Lucía <em>Duarte</em></h1>
           <p>Estudiante de Ingeniería en Sistemas de Información</p>
+          <a
+            className="boton-cv"
+            href="cv-lucia-duarte.pdf"
+            download="CV-Lucia-Duarte.pdf"
+          >
+            <FaDownload />
+            Descargar CV
+          </a>
         </div>
         <TarjetaCodigo />
       </div>

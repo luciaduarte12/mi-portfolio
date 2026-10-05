@@ -12,6 +12,7 @@ import Proyectos from './Proyectos';
 import OrbitaTecnologias from './OrbitaTecnologias';
 import { useEffect } from 'react';
 import BarraEstado from './BarraEstado';
+import ProgresoScroll from './ProgresoScroll';
 
 function App() {
   const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, PostgreSQL, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una oportunidad laboral donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
@@ -77,8 +78,10 @@ function App() {
       nombre: "Soporte de Tickets",
       descripcion: "Proyecto end-to-end de análisis de datos: generación de 300 tickets sintéticos con Python, clasificación automática mediante IA (83% de acierto en categorización) y dashboard interactivo en Tableau Public con KPIs de SLA, backlog y rendimiento por técnico.",
       tecnologias: ["Python", "Gemini API", "Power BI", "Tableau Public"],
+      aprendizaje: "Armé un proyecto de datos de punta a punta: generé 300 tickets sintéticos con Python, los clasifiqué con IA y los llevé a un dashboard con KPIs de SLA, backlog y rendimiento por técnico.",
       enlace: "https://public.tableau.com/views/AnalisisTicketsSoporteIA/Dashboard1",
       textoBoton: "Ver Dashboard",
+      repositorio: "https://github.com/luciaduarte12/analisis-tickets-soporte-ia",
       componenteTableau: (
         <div className="tableauPlaceholder" id="viz1787929571802" style={{ position: 'relative' }}>
           <noscript>
@@ -109,15 +112,19 @@ function App() {
       nombre: "Portafolio personal",
       descripcion: "Sitio web desarrollado con React y Vite, con diseño propio, animaciones al hacer scroll, navegación interactiva y diseño responsive.",
       tecnologias: ["React", "JavaScript", "CSS", "Vite"],
+      aprendizaje: "Practiqué componentes reutilizables y estado en React, animaciones al hacer scroll con IntersectionObserver y un diseño responsive pensado para celular.",
       enlace: null,
+      repositorio: "https://github.com/luciaduarte12/mi-portfolio",
     },
     {
       nombre: "Memotest",
       descripcion: "Juego de memoria con el stack tecnológico usado en este portfolio. Conectado a una base de datos real (PostgreSQL) con leaderboard de mejores tiempos. Sin login, se juega directo desde acá.",
       tecnologias: ["React", "Express", "PostgreSQL", "Vite"],
+      aprendizaje: "Conecté una interfaz en React con un backend propio y una base de datos real en PostgreSQL, con inserts parametrizados para evitar SQL injection y un ranking de mejores tiempos.",
       enlace: "https://luciaduarte12.github.io/memotest-db/",
       textoBoton: "Jugar",
       embebido: true,
+      repositorio: "https://github.com/luciaduarte12/memotest-db",
     },
   ];
 
@@ -128,6 +135,7 @@ function App() {
 
   return (
     <div className="App">
+      <ProgresoScroll />
       <MenuLateral />
       <BotonArriba />
       <BarraEstado />
