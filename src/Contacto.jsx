@@ -22,6 +22,15 @@ function Contacto() {
           </li>
         ))}
       </ul>
+
+      <div className="footer-codigo">
+        <div>
+          <span className="comentario">// Diseñado y desarrollado por Lucía Duarte · 2026</span>
+        </div>
+        <div>
+          <span className="funcion">console.log</span>(<span className="cadena">"Gracias por visitar"</span>);
+        </div>
+      </div>
     </footer>
   );
 }

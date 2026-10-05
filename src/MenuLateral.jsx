@@ -11,7 +11,7 @@ function MenuLateral() {
     { id: "contacto", nombre: "Contacto", icono: <FaEnvelope /> },
   ];
 
-  const [seccionActiva, setSeccionActiva] = useState("sobre-mi");
+  const [seccionActiva, setSeccionActiva] = useState(null);
   const ignorarScroll = useRef(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function MenuLateral() {
       }
 
       const lineaReferencia = window.innerHeight * 0.25;
-      let idActivo = secciones[0].id;
+      let idActivo = null;
 
       for (const seccion of secciones) {
         const elemento = document.getElementById(seccion.id);

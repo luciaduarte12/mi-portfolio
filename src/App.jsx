@@ -9,7 +9,9 @@ import AlAparecer from './AlAparecer';
 import MenuLateral from './MenuLateral';
 import BotonArriba from './BotonArriba';
 import Proyectos from './Proyectos';
+import OrbitaTecnologias from './OrbitaTecnologias';
 import { useEffect } from 'react';
+import BarraEstado from './BarraEstado';
 
 function App() {
   const miTexto = "Soy estudiante de Ingeniería en Sistemas de Información, con conocimientos en programación y bases de datos (SQL Server, PostgreSQL, modelado de datos, consultas avanzadas), además de experiencia en armado, reparación y mantenimiento de PC, orientada a soporte técnico. Complemento mi formación de forma autodidacta, ampliando mis conocimientos hacia Power BI para análisis de datos y desarrollo web. Busco una oportunidad laboral donde pueda poner en práctica mis conocimientos, continuar formándome junto a un equipo de trabajo y desempeñarme con responsabilidad y compromiso.";
@@ -128,6 +130,7 @@ function App() {
     <div className="App">
       <MenuLateral />
       <BotonArriba />
+      <BarraEstado />
       <Header />
       <AlAparecer id="sobre-mi">
         <Sobre texto={miTexto} />
@@ -139,6 +142,7 @@ function App() {
       <Separador />
       <AlAparecer id="habilidades">
         <Habilidades categorias={misHabilidades} />
+        <OrbitaTecnologias />
       </AlAparecer>
       <Separador />
       <AlAparecer id="idiomas">
