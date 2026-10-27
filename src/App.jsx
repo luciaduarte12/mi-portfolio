@@ -1,6 +1,7 @@
 import Header from './Header';
 import Sobre from './Sobre';
 import Formacion from './Formacion';
+import Certificaciones from './Certificaciones';
 import Habilidades from './Habilidades';
 import Contacto from './Contacto';
 import Idiomas from './Idiomas';
@@ -23,15 +24,26 @@ function App() {
       institucion: "Universidad Tecnológica Nacional - FRC",
       periodo: "2020 - Actualidad",
     },
+  ];
+
+  const misCertificaciones = [
     {
-      carrera: "Certificación en Soporte Técnico Nivel 1. Armado, reparación y mantenimiento de PC",
-      institucion: "Universidad Tecnológica Nacional - FRC",
-      periodo: "julio 2025 - octubre 2025",
+      titulo: "Network Support and Security",
+      emisor: "Cisco Networking Academy",
+      fecha: "octubre 2026",
+      certificado: "https://www.credly.com/badges/c68cc59d-f3ed-443f-8498-275f7e8c55ee/public_url",
+      descripcion: "Soporte a equipos, redes y usuarios como parte de un equipo de help desk, con foco en diagnóstico, resolución de problemas y documentación.",
+      habilidades: ["Help Desk", "Network Troubleshooting", "Endpoint Devices", "Documentation", "Support", "User Support"],
     },
     {
-      carrera: "Certificación en Primeros auxilios con RCP y DEA",
-      institucion: "Institución BADRA",
-      periodo: "septiembre 2025",
+      titulo: "Certificación en Soporte Técnico Nivel 1. Armado, reparación y mantenimiento de PC",
+      emisor: "Universidad Tecnológica Nacional - FRC",
+      fecha: "julio 2025 - octubre 2025",
+    },
+    {
+      titulo: "Certificación en Primeros auxilios con RCP y DEA",
+      emisor: "Institución BADRA",
+      fecha: "septiembre 2025",
       certificado: "certificado-rcp-dea.jpeg",
     },
   ];
@@ -146,6 +158,10 @@ function App() {
       <Separador />
       <AlAparecer id="formacion">
         <Formacion items={miFormacion} />
+      </AlAparecer>
+      <Separador />
+      <AlAparecer id="certificaciones">
+        <Certificaciones items={misCertificaciones} />
       </AlAparecer>
       <Separador />
       <AlAparecer id="habilidades">

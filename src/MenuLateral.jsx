@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { FaUser, FaGraduationCap, FaTools, FaGlobe, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
+import { FaUser, FaGraduationCap, FaAward, FaTools, FaGlobe, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 
 function MenuLateral() {
   const secciones = [
     { id: "sobre-mi", nombre: "Sobre mí", icono: <FaUser /> },
     { id: "formacion", nombre: "Formación", icono: <FaGraduationCap /> },
+    { id: "certificaciones", nombre: "Certificaciones", icono: <FaAward /> },
     { id: "habilidades", nombre: "Habilidades", icono: <FaTools /> },
     { id: "idiomas", nombre: "Idiomas", icono: <FaGlobe /> },
     { id: "proyectos", nombre: "Proyectos", icono: <FaFolderOpen /> },
