@@ -32,8 +32,8 @@ function App() {
       emisor: "Cisco Networking Academy",
       fecha: "octubre 2026",
       certificado: "https://www.credly.com/badges/c68cc59d-f3ed-443f-8498-275f7e8c55ee/public_url",
-      descripcion: "Soporte a equipos, redes y usuarios como parte de un equipo de help desk, con foco en diagnóstico, resolución de problemas y documentación.",
-      habilidades: ["Help Desk", "Network Troubleshooting", "Endpoint Devices", "Documentation", "Support", "User Support"],
+      descripcion: "Soporte a equipos, redes y usuarios como parte de un equipo de mesa de ayuda, con foco en diagnóstico, resolución de problemas y documentación.",
+      habilidades: ["Mesa de Ayuda", "Resolución de Problemas de Red", "Dispositivos Finales", "Documentación", "Soporte", "Soporte al Usuario"],
     },
     {
       titulo: "Certificación en Soporte Técnico Nivel 1. Armado, reparación y mantenimiento de PC",
