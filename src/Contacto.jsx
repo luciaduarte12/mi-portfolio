@@ -19,7 +19,7 @@ function Contacto() {
   const contactos = [
     { nombre: "LinkedIn", url: "https://www.linkedin.com/in/lucia-duarte-712b3223a", icono: <FaLinkedin /> },
     { nombre: "GitHub", url: "https://github.com/luciaduarte12", icono: <FaGithub /> },
-    { nombre: "Descargar CV", url: "cv-lucia-duarte.pdf", icono: <FaDownload />, descarga: "CV-Lucia-Duarte.pdf" },
+    { nombre: "Descargar CV", url: "CV_Lucia_Duarte.pdf", icono: <FaDownload />, descarga: "CV-Lucia-Duarte.pdf" },
   ];
 
   return (

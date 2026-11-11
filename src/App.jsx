@@ -22,7 +22,7 @@ function App() {
     {
       carrera: "Ingeniería en Sistemas de Información",
       institucion: "Universidad Tecnológica Nacional - FRC",
-      periodo: "2020 - Actualidad",
+      periodo: "Actualidad",
     },
   ];
 

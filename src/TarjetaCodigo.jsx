@@ -41,7 +41,7 @@ const lineas = [
   [
     { t: '  buscando', c: 'propiedad' },
     { t: ': ', c: 'signo' },
-    { t: '"Primera oportunidad laboral"', c: 'cadena' },
+    { t: '"Oportunidades laborales"', c: 'cadena' },
   ],
   [{ t: '};', c: 'signo' }],
 ];

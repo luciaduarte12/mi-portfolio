@@ -12,7 +12,7 @@ function Header() {
           <p>Estudiante de Ingeniería en Sistemas de Información</p>
           <a
             className="boton-cv"
-            href="cv-lucia-duarte.pdf"
+            href="CV_Lucia_Duarte.pdf"
             download="CV-Lucia-Duarte.pdf"
           >
             <FaDownload />
