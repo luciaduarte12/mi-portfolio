@@ -1212,6 +1212,25 @@ html {
   color: var(--rosa);
 }
 
+.proyecto-imagen-enlace {
+  display: block;
+  margin: 14px 0;
+}
+
+.proyecto-imagen {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.proyecto-imagen:hover {
+  transform: scale(1.01);
+}
+
 .proyecto-acciones {
   display: flex;
   flex-wrap: wrap;

@@ -52,6 +52,23 @@ function Proyectos({ items }) {
         <div className="proyecto-item" key={proyecto.nombre}>
           <h3>{proyecto.nombre}</h3>
           <p className="descripcion">{proyecto.descripcion}</p>
+
+          {proyecto.imagen && (
+            <a
+              href={`${import.meta.env.BASE_URL}${proyecto.imagen}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proyecto-imagen-enlace"
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}${proyecto.imagen}`}
+                alt={proyecto.imagenAlt || proyecto.nombre}
+                className="proyecto-imagen"
+                loading="lazy"
+              />
+            </a>
+          )}
+
           <div className="chips">
             {proyecto.tecnologias.map((tech) => (
               <span className="chip" key={tech}>

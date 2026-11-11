@@ -87,6 +87,27 @@ function App() {
 
   const misProyectos = [
     {
+      nombre: "FlotaControl: gestión de flotas y mantenimiento preventivo",
+      descripcion:
+        "Sistema de microservicios para monitorear vehículos y automatizar alertas de service. Cada cambio de estado de un vehículo se publica como evento y el servicio de mantenimiento genera la alerta, sin que los servicios se conozcan entre sí. Incluye un panel web en React que muestra la flota, el estado de cada vehículo y las alertas en tiempo real.",
+      tecnologias: [
+        "Java 17",
+        "Spring Boot",
+        "Spring Cloud Gateway",
+        "PostgreSQL",
+        "RabbitMQ",
+        "Docker",
+        "React",
+        "GitHub Actions",
+      ],
+      imagen: "flotacontrol.png",
+      imagenAlt:
+        "Panel de FlotaControl con la flota, los estados de cada vehículo y una alerta de mantenimiento pendiente",
+      aprendizaje:
+        "A modelar el ciclo de vida de un vehículo con el patrón State y persistirlo con un AttributeConverter de JPA, a comunicar servicios de forma asíncrona con RabbitMQ (cada uno con su propia base de datos) y a dockerizar el sistema completo. También a diagnosticar con los logs: una patente repetida devolvía un error 500 y pasó a responder 409, y corregí una regla que reabría alertas ya atendidas calculando los kilómetros desde el último service.",
+      repositorio: "https://github.com/luciaduarte12/gestion-flotas-microservicios",
+    },
+    {
       nombre: "Soporte de Tickets",
       descripcion: "Proyecto end-to-end de análisis de datos: generación de 300 tickets sintéticos con Python, clasificación automática mediante IA (83% de acierto en categorización) y dashboard interactivo en Tableau Public con KPIs de SLA, backlog y rendimiento por técnico.",
       tecnologias: ["Python", "Gemini API", "Power BI", "Tableau Public"],
