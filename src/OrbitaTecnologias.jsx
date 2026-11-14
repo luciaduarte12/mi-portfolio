@@ -14,14 +14,19 @@ import {
   FaMicrochip,
   FaChartBar,
   FaChartLine,
+  FaJava,
+  FaDocker,
+  FaGithub,
+  FaGitAlt,
 } from 'react-icons/fa';
+import { SiSpringboot, SiRabbitmq, SiVite } from 'react-icons/si';
 
 // Cada anillo es un grupo de tecnologías. Podés editar las listas y las descripciones a gusto.
 // factor = tamaño del anillo (más grande = más afuera), segundos = velocidad (más = más lento)
 const anillos = [
   {
     nombre: 'Desarrollo web',
-    factor: 0.38,
+    factor: 0.34,
     segundos: 40,
     sentido: 'normal',
     color: 'var(--dorado)',
@@ -46,13 +51,57 @@ const anillos = [
         icono: <FaReact />,
         descripcion: 'Biblioteca de JavaScript para construir interfaces a partir de componentes.',
       },
+      {
+        nombre: 'Vite',
+        icono: <SiVite />,
+        descripcion: 'Herramienta que uso para levantar y compilar mis proyectos de React rápidamente.',
+      },
+    ],
+  },
+  {
+    nombre: 'Backend y DevOps',
+    factor: 0.52,
+    segundos: 50,
+    sentido: 'reverse',
+    color: '#8fc1d4',
+    items: [
+      {
+        nombre: 'Java',
+        icono: <FaJava />,
+        descripcion: 'Lenguaje de programación orientado a objetos con el que armé mis servicios de backend.',
+      },
+      {
+        nombre: 'Spring Boot',
+        icono: <SiSpringboot />,
+        descripcion: 'Framework de Java para crear APIs REST y microservicios.',
+      },
+      {
+        nombre: 'RabbitMQ',
+        icono: <SiRabbitmq />,
+        descripcion: 'Sistema de mensajería que permite a los servicios avisarse eventos entre sí.',
+      },
+      {
+        nombre: 'Docker',
+        icono: <FaDocker />,
+        descripcion: 'Plataforma para empaquetar aplicaciones y levantarlas igual en cualquier computadora.',
+      },
+      {
+        nombre: 'GitHub Actions',
+        icono: <FaGithub />,
+        descripcion: 'Automatización que compila y prueba mi proyecto cada vez que subo cambios.',
+      },
+      {
+        nombre: 'Git',
+        icono: <FaGitAlt />,
+        descripcion: 'Sistema de control de versiones para llevar el historial de mi código.',
+      },
     ],
   },
   {
     nombre: 'Datos',
-    factor: 0.66,
+    factor: 0.70,
     segundos: 60,
-    sentido: 'reverse',
+    sentido: 'normal',
     color: 'var(--rosa)',
     items: [
       {
@@ -94,9 +143,9 @@ const anillos = [
   },
   {
     nombre: 'Sistemas y soporte',
-    factor: 0.82,
+    factor: 0.86,
     segundos: 80,
-    sentido: 'normal',
+    sentido: 'reverse',
     color: 'var(--champagne)',
     items: [
       {

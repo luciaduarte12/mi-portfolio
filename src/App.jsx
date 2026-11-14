@@ -74,6 +74,16 @@ function App() {
       descripcion: "Uso Windows y Linux en entornos de desarrollo y para tareas de soporte, incluyendo configuración básica de red y solución de problemas.",
       items: ["Windows", "Linux"],
     },
+    {
+      titulo: "Backend y arquitectura",
+      descripcion: "Aprendí a pensar un backend en partes: una API que recibe los pedidos, servicios que se reparten el trabajo y mensajes que los mantienen sincronizados. Lo puse en práctica con Java y Spring Boot.",
+      items: ["Java", "Spring Boot", "Spring Cloud Gateway", "API REST", "Microservicios", "Patrón State", "RabbitMQ"],
+    },
+    {
+      titulo: "DevOps y herramientas",
+      descripcion:"Dockericé cada servicio del proyecto FlotaControl junto a sus bases de datos y el broker de mensajes con Docker Compose, y configuré integración continua con GitHub Actions para que cada cambio compile y pase las pruebas automáticamente.",
+      items: ["Docker", "Docker compose", "GitHub Actions", "CI/CD", "Git/GitHub"]
+    }
   ];
 
   const misIdiomas = [
